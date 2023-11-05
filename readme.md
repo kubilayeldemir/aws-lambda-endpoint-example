@@ -191,7 +191,7 @@ Choose the right tool based on your application's specific needs and the feature
 
 For more information, visit the [AWS Lambda Developer Guide](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html) and the [Amazon API Gateway Developer Guide](https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html).
 
-#What are the advantages of using lambda for an endpoint?
+# What are the advantages of using lambda for an endpoint?
 
 Using AWS Lambda for endpoint services comes with a variety of advantages, especially when dealing with microservices, serverless architectures, or event-driven systems. Here are some of the key benefits:
 
@@ -230,8 +230,11 @@ Using AWS Lambda for endpoint services comes with a variety of advantages, espec
 By using Lambda for endpoints, you get the benefits of reduced operational overhead, cost savings from the pay-per-use model, and built-in scalability and reliability, all of which can significantly speed up the development, deployment, and management process of your applications.
 
 
-##Request Model Of Lambda Proxy Integration
+## Request Model Of Lambda Proxy Integration
 When you're using the Lambda proxy integration feature in Amazon API Gateway, the API Gateway service transforms the incoming HTTP request into a standard format before passing it on to the Lambda function. This standardized format includes all the necessary data that the function needs to process the request.
+
+If you are going to use the functionURL instead of api gateway, use events.LambdaFunctionURLRequest as request model.
+There are some differences. For example: LambdaFunctionURLRequest do not have HTTPMethod variable since it's a URL.
 
 Here's the basic structure of the event object that the Lambda function receives:
 
@@ -293,7 +296,7 @@ Here's the basic structure of the event object that the Lambda function receives
 - **body**: The payload of the request. For a typical JSON payload, you would parse this JSON into an object.
 - **isBase64Encoded**: A boolean flag to indicate if the applicable request payload is Base64-encode
 
-##Response Model Of Lambda Proxy Integration
+## Response Model Of Lambda Proxy Integration
 When using AWS API Gateway with the Lambda Proxy Integration, the expected format for the Lambda function to return a response that API Gateway can understand and transform into an HTTP response is as follows:
 
 ```json

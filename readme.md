@@ -26,8 +26,8 @@ docker tag my-app:latest 123456789012.dkr.ecr.us-west-2.amazonaws.com/my-app:lat
 ### Step 5: Push the Docker image to ECR
 docker push 123456789012.dkr.ecr.us-west-2.amazonaws.com/my-app:latest
 
-### Step 6: Push the Docker image to ECR
-Create lambda from AWS UI and select image you uploaded.
+### Step 6: Create Lambda Set Image Add Trigger
+Create lambda from AWS Console and select image you uploaded.
 Add trigger: Api Gateway or create Function Url from Lambda -Configuration tab.
 
 OR
